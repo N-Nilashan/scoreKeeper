@@ -38,7 +38,9 @@ To start a new game, click the **"Reset"** button.
 
 ## File Structure
 **index.html:** The main HTML file containing the structure of the web page.
+
 **app.js:** The JavaScript file containing the logic for updating scores and handling game events.
+
 **img/:** Directory containing image assets used in the application.
 
 ## Acknowledgments
