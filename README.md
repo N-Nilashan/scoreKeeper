@@ -27,9 +27,13 @@ To start a new game, click the **"Reset"** button.
 
 ## Future Ideas
 **Multiplayer Support:** Allow for tracking scores of more than two players for games involving multiple participants.
+
 **Customizable Winning Score:** Enable users to input a custom winning score threshold instead of selecting from predefined options.
+
 **Mobile Optimization:** Optimize the application for mobile devices to improve accessibility and user experience.
+
 **History Tracking:** Implement a feature to track the history of games played, including scores and winners.
+
 **Themes:** Provide different theme options for users to customize the look and feel of the application.
 
 ## File Structure
