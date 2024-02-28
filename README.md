@@ -20,7 +20,9 @@ To start a new game, click the **"Reset"** button.
 
 ## Challenges Faced
 **DOM Manipulation:** Working with the DOM in JavaScript to update the score display and handle button clicks efficiently.
+
 **Game Logic:** Implementing the logic to determine when the game ends based on the winning score threshold.
+
 **Styling:** Ensuring the application has a clean and user-friendly interface using Bulma CSS framework.
 
 ## Future Ideas
