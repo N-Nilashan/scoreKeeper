@@ -8,14 +8,20 @@ Reset the scores to start a new game.
 
 ## Technologies Used
 HTML
+
 CSS (Bulma CSS framework)
+
 JavaScript
 
 ## How to Use
 Open the **index.html** file in a web browser.
+
 Select the desired winning score threshold from the dropdown menu.
+
 Click the **"+1"** button corresponding to the player who scores a point.
+
 Once a player reaches the winning score, the game ends, and further score updates are disabled.
+
 To start a new game, click the **"Reset"** button.
 
 ## Challenges Faced
