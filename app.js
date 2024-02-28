@@ -1,50 +1,42 @@
-const p1Button = document.getElementById("p1Button")
-const p2Button = document.getElementById("p2Button")
-const p1Display = document.getElementById("p1Display")
-const p2Display = document.getElementById("p2Display")
+const p1 = {
+    score: 0,
+    button: document.getElementById("p1Button"),
+    display: document.getElementById("p1Display")
+}
+const p2 = {
+    score: 0,
+    button: document.getElementById("p2Button"),
+    display: document.getElementById("p2Display")
+}
+
 const resetGame = document.getElementById("resetGame")
 const selectLevel = document.getElementById("selectLevel")
-
-let p1Score = 0;
-let p2Score = 0;
 let winningScore = selectLevel.value;
-let isGameOVer = false
+let isGameOver = false
 
-p1Button.addEventListener('click', function () {
-    if (isGameOVer == false) {
+function updateScore(player, opponent) {
+    if (isGameOver == false) {
 
-        p1Score += 1;
-        if (p1Score == winningScore) {
-            isGameOVer = true
-            p1Display.classList.add('has-text-success')
-            p2Display.classList.add('has-text-danger')
-            p1Button.disabled = true
-            p2Button.disabled = true
+        player.score += 1;
+        if (player.score == winningScore) {
+            isGameOver = true
+            player.display.classList.add('has-text-success')
+            opponent.display.classList.add('has-text-danger')
+            player.button.disabled = true
+            opponent.button.disabled = true
         }
-        p1Display.textContent = p1Score
-
+        player.display.textContent = player.score
     }
+}
 
-
+p1.button.addEventListener('click', function () {
+    updateScore(p1, p2)
 })
-p2Button.addEventListener('click', function () {
-    if (isGameOVer == false) {
-
-        p2Score += 1;
-        if (p2Score == winningScore) {
-            isGameOVer = true
-            p2Display.classList.add('has-text-success')
-            p1Display.classList.add('has-text-danger')
-            p1Button.disabled = true
-            p2Button.disabled = true
-        }
-        p2Display.textContent = p2Score
-    }
-
+p2.button.addEventListener('click', function () {
+    updateScore(p2, p1)
 })
 
 resetGame.addEventListener('click', reset)
-
 
 selectLevel.addEventListener('change', function () {
     winningScore = parseInt(this.value)
@@ -52,13 +44,11 @@ selectLevel.addEventListener('change', function () {
 })
 
 function reset() {
-    isGameOVer = false
-    p1Score = 0
-    p2Score = 0
-    p1Display.textContent = p1Score
-    p2Display.textContent = p2Score
-    p2Display.classList.remove('has-text-danger', 'has-text-success')
-    p1Display.classList.remove('has-text-danger', 'has-text-success')
-    p1Button.disabled = false
-    p2Button.disabled = false
+    isGameOver = false
+    for (let p of [p1, p2]) {
+        p.score = 0
+        p.display.textContent = p.score
+        p.display.classList.remove('has-text-danger', 'has-text-success')
+        p.button.disabled = false
+    }
 }
